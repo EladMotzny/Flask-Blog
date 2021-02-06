@@ -1,0 +1,32 @@
+{% extends 'base.html' %}
+
+{% block head %}
+<title>Blog</title>
+{% endblock %}
+
+{% block body %}
+<br>
+<h1>Home Page</h1>
+<br>
+<main role="main">
+    <div class="jumbotron">
+        <div class="col-sm-8 mx-auto">
+            <h1>Welcome!</h1>
+            <p>Welcome to my blog project!
+                <br>
+                I used Flask and bootstrap to make this website.
+                <br>
+                When you click on the button below, you will be moved to the blog itself where you would be able to add, edit and delete posts.
+                <br>
+                You can also use the navigation bar above to go to the same page and see my <a href="https://www.linkedin.com/in/eladmotzny/">LinkedIn</a> and <a href="https://github.com/EladMotzny">Github</a> profiles.
+                <br>
+                Give it a try!
+            </p>
+            <p>
+                <a class="btn btn-primary" href="/posts" role="button">Go to the posts
+                    &raquo;</a>
+            </p>
+        </div>
+    </div>
+</main>
+{% endblock %}
