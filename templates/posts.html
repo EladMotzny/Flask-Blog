@@ -12,18 +12,28 @@
     <h1 style="display: inline;">Blog Posts</h1>
     <a style="display: inline;" class="btn btn-success float-right" href="/posts/new">+ New Post</a>
 </div>
+<div id="accordion">
     {% for post in posts %}
         <hr>
-        <h2>{{ post.title }}</h2><!-- double brackets for printing-->
-        {% if post.author %}
-           <small> Written By: {{ post.author }} on {{ post.date_posted }}</small> 
-        {% else %}
-            <small> Written By: N/A on {{ post.date_posted }} </small> 
-        {% endif %}
+        <div class="card">
+            <div class="card-header" id="heading{{post.id}}">
+                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{post.id}}" aria-expanded="true" aria-controls="collapse{{post.id}}">
+                    <h2>{{ post.title }}</h2><!-- double brackets for printing-->
+                    {% if post.author %}
+                        <small> Written By: {{ post.author }} on {{ post.date_posted }}</small> 
+                    {% else %}
+                        <small> Written By: N/A on {{ post.date_posted }} </small> 
+                    {% endif %}
+                </button>
+            </div><!-- div card-header -->
         <br>
-        <br>
-        <p style="white-space: pre-wrap;">{{ post.content }}</p>
-        <a class="btn btn-info" href="/posts/edit/{{post.id}}">Edit Post</a>
-        <a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete Post</a>
+        <!-- Collapsed Content -->
+            <div id="collapse{{post.id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+                <p style="white-space: pre-wrap;">{{ post.content }}</p>
+                <a class="btn btn-info" href="/posts/edit/{{post.id}}">Edit Post</a>
+                <a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete Post</a>
+            </div><!-- collapse div-->
+        </div><!-- class card div -->
     {% endfor %}
+</div><!-- accodrion div -->
 {% endblock %}
