@@ -16,24 +16,23 @@
     {% for post in posts %}
         <hr>
         <div class="card">
-            <div class="card-header" id="heading{{post.id}}">
-                <button class="btn btn-link" data-toggle="collapse" data-target="#collapse{{post.id}}" aria-expanded="true" aria-controls="collapse{{post.id}}">
-                    <h2>{{ post.title }}</h2><!-- double brackets for printing-->
+            <div class="card-header" id="heading{{post.id}}" style="background-color: #8BC4C1;">
+                <button class="btn" data-toggle="collapse" data-target="#collapse{{post.id}}" aria-expanded="false" aria-controls="collapse{{post.id}}">
+                    <h2 style="text-align: center;">{{ post.title }}</h2>
                     {% if post.author %}
                         <small> Written By: {{ post.author }} on {{ post.date_posted }}</small> 
                     {% else %}
                         <small> Written By: N/A on {{ post.date_posted }} </small> 
                     {% endif %}
                 </button>
-            </div><!-- div card-header -->
-        <br>
+            </div>
         <!-- Collapsed Content -->
-            <div id="collapse{{post.id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion">
+            <div id="collapse{{post.id}}" class="collapse show" aria-labelledby="headingOne" data-parent="#accordion" style="background-color: #AAD4DA;">
                 <p style="white-space: pre-wrap;">{{ post.content }}</p>
                 <a class="btn btn-info" href="/posts/edit/{{post.id}}">Edit Post</a>
                 <a class="btn btn-danger" href="/posts/delete/{{post.id}}">Delete Post</a>
-            </div><!-- collapse div-->
-        </div><!-- class card div -->
+            </div>
+        </div>
     {% endfor %}
-</div><!-- accodrion div -->
+</div>
 {% endblock %}
