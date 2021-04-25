@@ -1,6 +1,7 @@
 # Flask-Blog
 
-This is a blog Fullstack I made using Flask and Bootstrap.
+This is a Fullstack blog project I made using Flask for the backend and Bootstrap for the frontend.
+
 Make sure you have flask and flask-sqlalchemy installed on your environment like so:
 
 ```
