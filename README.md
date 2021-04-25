@@ -1,6 +1,6 @@
 # Flask-Blog
 
-This is a blog Fullstack I made using Flask and Bootstrap. React will be added soon.
+This is a blog Fullstack I made using Flask and Bootstrap.
 Make sure you have flask and flask-sqlalchemy installed on your environment like so:
 
 ```
